@@ -8,7 +8,7 @@ import  os
 project_root = os.path.dirname(os.path.abspath(__file__))
 print(f"project root : {project_root}")
 
-file_path = os.path.join(project_root,"sample.txt")
+file_path = os.path.join(project_root,"sample_with_read_permission.txt")
 print(f"file path : {file_path}")
 
 # Writing to a file
