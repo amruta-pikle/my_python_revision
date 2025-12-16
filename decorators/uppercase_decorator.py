@@ -1,41 +1,45 @@
 """
-uppercase_decorator.py
+Write a decorator that converts a function’s return value to uppercase.
+Medium
 
-This file contains a very simple beginner-level custom decorator
-that converts the return value of a function into uppercase.
 """
 
 from functools import wraps
 
 
 def make_uppercase(func):
-    """
-    Decorator to convert string output of a function into uppercase.
-
-    Example:
-        >>> @make_uppercase
-        ... def greet(name):
-        ...     return f"Hello, {name}"
-        >>> greet("Amruta")
-        'HELLO, AMRUTA'
-    """
-
     @wraps(func)
     def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        return result.upper()
-
+        return func(*args, **kwargs).upper()
     return wrapper
 
-
 @make_uppercase
-def greet(name):
-    """Returns a greeting message."""
-    return f"Hello, {name}"
+def upper_fun(s):
+    return s
 
 
 if __name__ == "__main__":
-    print(greet("Amruta"))
-    print(greet.__name__)  # will show "wrapper" without wraps
-    print(greet.__doc__)  # will lose original docstring
+    while True:
+        s = input("enter a word")
+        if s == "exit" or not s:
+            break
+
+        print(f"upper case of {s} is : {upper_fun(s)}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
